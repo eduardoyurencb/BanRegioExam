@@ -36,35 +36,37 @@ class LoginPresenter(val context: Context) : Presenter<LoginView>() {
             getView().showToast(MSG_PASSWORD)
         }
 
-        if (Network.isNetworkConnected(context) && flag) {
-            getView().showLoadingView()
-            val service = RestClient.getClient(Constants.HOST)
-            val responseCall = service.getLoginResponse()
-            responseCall.subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(
-                            object : Observer<LoginResponse> {
-                                override fun onComplete() {
-                                }
+        if(flag) {
+            if (Network.isNetworkConnected(context)) {
+                getView().showLoadingView()
+                val service = RestClient.getClient(Constants.HOST)
+                val responseCall = service.getLoginResponse()
+                responseCall.subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(
+                                object : Observer<LoginResponse> {
+                                    override fun onComplete() {
+                                    }
 
-                                override fun onSubscribe(d: Disposable) {
-                                }
+                                    override fun onSubscribe(d: Disposable) {
+                                    }
 
-                                override fun onNext(t: LoginResponse) {
-                                    Log.d(TAG, "onNext()")
-                                    getView().hideLoadingView()
-                                    getView().onCorrectLogin(t)
-                                }
+                                    override fun onNext(t: LoginResponse) {
+                                        Log.d(TAG, "onNext()")
+                                        getView().hideLoadingView()
+                                        getView().onCorrectLogin(t)
+                                    }
 
-                                override fun onError(e: Throwable) {
-                                    Log.d(TAG, "onError()")
-                                    getView().hideLoadingView()
-                                    getView().showToast(context.getString(R.string.label_error))
+                                    override fun onError(e: Throwable) {
+                                        Log.d(TAG, "onError()")
+                                        getView().hideLoadingView()
+                                        getView().showToast(context.getString(R.string.label_error))
+                                    }
                                 }
-                            }
-                    )
-        } else {
-            getView().showToast(context.getString(R.string.label_error_network))
+                        )
+            } else {
+                getView().showToast(context.getString(R.string.label_error_network))
+            }
         }
     }
 }
