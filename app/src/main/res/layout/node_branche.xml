@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="examen.com.banregioapp.utils.FontUtils" />
+
+        <variable
+            name="branchResponse"
+            type="examen.com.corebanregio.model.BranchResponse" />
+
+        <variable
+            name="context"
+            type="android.content.Context" />
+
+        <variable
+            name="font"
+            type="String" />
+
+        <variable
+            name="searchBranchIFace"
+            type="examen.com.banregioapp.main.view.fragment.SearchBranchIFace" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="115dp"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small"
+            android:backgroundTint="@color/colorWhite"
+            android:elevation="@dimen/elevation_card_view"
+            android:onClick="@{()->searchBranchIFace.onClickItemBranch(branchResponse)}"
+            app:cardCornerRadius="@dimen/radius_card_view"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.38" />
+
+                <ImageView
+                    android:id="@+id/image_view_branch"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/margin_small"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_view_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_small_micro"
+                    android:layout_marginTop="@dimen/margin_small_micro"
+                    android:lines="1"
+                    android:text="@{branchResponse.nombre}"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guideline"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_view_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small_micro"
+                    android:layout_marginTop="@dimen/margin_small_micro"
+                    android:maxLines="2"
+                    android:text="@{branchResponse.domicilio}"
+                    android:textSize="@dimen/text_size_labels_node_branch"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/text_view_ic_address"
+                    app:layout_constraintTop_toBottomOf="@+id/text_view_name" />
+
+                <TextView
+                    android:id="@+id/text_view_ic_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small_micro"
+                    android:text="@string/icon_address"
+                    android:textSize="@dimen/text_size_icons_node_branche"
+                    android:typeface="@{FontUtils.getTypeface(context, font)}"
+                    app:layout_constraintStart_toEndOf="@+id/guideline"
+                    app:layout_constraintTop_toTopOf="@+id/text_view_address"
+                    app:layout_constraintBottom_toBottomOf="@+id/text_view_address"/>
+
+                <TextView
+                    android:id="@+id/text_view_oclock"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small_micro"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:maxLines="2"
+                    android:text="@{branchResponse.horario}"
+                    android:textSize="@dimen/text_size_labels_node_branch"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/text_view_ic_address"
+                    app:layout_constraintTop_toBottomOf="@+id/text_view_address" />
+
+
+                <TextView
+                    android:id="@+id/text_view_ic_oclock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small_micro"
+                    android:text="@string/icon_clock"
+                    android:textSize="@dimen/text_size_icons_node_branche"
+                    android:typeface="@{FontUtils.getTypeface(context, font)}"
+                    app:layout_constraintStart_toEndOf="@+id/guideline"
+                    app:layout_constraintTop_toTopOf="@+id/text_view_oclock"
+                    app:layout_constraintBottom_toBottomOf="@+id/text_view_oclock"/>
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

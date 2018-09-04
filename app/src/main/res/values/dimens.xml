@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_small_micro">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="elevation_card_view">8dp</dimen>
+    <dimen name="radius_card_view">4dp</dimen>
+    <dimen name="text_size_icons_detail_branch">28sp</dimen>
+    <dimen name="text_size_icons_node_branche">18sp</dimen>
+    <dimen name="text_size_labels_node_branch">12sp</dimen>
+</resources>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">BanRegioApp</string>
+    <string name="label_search">Buscar...</string>
+    <string name="label_user">Usuario</string>
+    <string name="label_password">Contraseña</string>
+    <string name="label_login">Ingresar</string>
+    <string name="title_search">buscar</string>
+    <string name="label_permission_cancel_gpg">Permisos de ubicación cancelados. Se usará una locación temporal</string>
+    <string name="label_gps_success">Ubicación exitosa</string>
+    <string name="label_gps_error">Error al obtener tu ubicación</string>
+
+    <string name="icon_address">&#xf2bb;</string>
+    <string name="icon_clock">&#xf017;</string>
+    <string name="icon_city">&#xf19c;</string>
+    <string name="icon_email">&#xf0e0;</string>
+
+</resources>

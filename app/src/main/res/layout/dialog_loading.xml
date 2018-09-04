@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        app:lottie_imageAssetsFolder="images"
+        app:lottie_fileName="sweep_card.json"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="examen.com.banregioapp.utils.FontUtils" />
+
+        <variable
+            name="context"
+            type="android.content.Context" />
+
+        <variable
+            name="font"
+            type="String" />
+
+        <variable
+            name="branchResponse"
+            type="examen.com.corebanregio.model.BranchResponse" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGray">
+
+        <ImageView
+            android:id="@+id/image_view_branch"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@color/colorWhite"
+            android:scaleType="fitXY"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_view_ic_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/icon_address"
+            android:textSize="@dimen/text_size_icons_detail_branch"
+            android:typeface="@{FontUtils.getTypeface(context, font)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_view_branch" />
+
+        <TextView
+            android:id="@+id/text_view_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_small"
+            android:maxLines="2"
+            android:text="@{branchResponse.nombre}"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/text_view_ic_address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_ic_address"
+            app:layout_constraintTop_toTopOf="@+id/text_view_ic_address" />
+
+        <TextView
+            android:id="@+id/text_view_ic_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/icon_city"
+            android:textSize="@dimen/text_size_icons_detail_branch"
+            android:typeface="@{FontUtils.getTypeface(context, font)}"
+            app:layout_constraintStart_toStartOf="@+id/image_view_branch"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_ic_address" />
+
+        <TextView
+            android:id="@+id/text_view_city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_small"
+            android:text="@{branchResponse.ciudad}"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/text_view_ic_city"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_ic_address"
+            app:layout_constraintTop_toTopOf="@+id/text_view_ic_city" />
+
+        <TextView
+            android:id="@+id/text_view_ic_clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/icon_clock"
+            android:textSize="@dimen/text_size_icons_detail_branch"
+            android:typeface="@{FontUtils.getTypeface(context, font)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_ic_city" />
+
+        <TextView
+            android:id="@+id/text_view_clock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_small"
+            android:maxLines="2"
+            android:text="@{branchResponse.horario}"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/text_view_ic_clock"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_ic_address"
+            app:layout_constraintTop_toTopOf="@+id/text_view_ic_clock" />
+
+        <TextView
+            android:id="@+id/text_view_ic_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/icon_email"
+            android:textSize="@dimen/text_size_icons_detail_branch"
+            android:typeface="@{FontUtils.getTypeface(context, font)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_ic_clock" />
+
+        <TextView
+            android:id="@+id/text_view_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_small"
+            android:maxLines="2"
+            android:text="@{branchResponse.correoGerente}"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/text_view_ic_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_ic_address"
+            app:layout_constraintTop_toTopOf="@+id/text_view_ic_email" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
