@@ -2,6 +2,7 @@ package examen.com.banregioapp.login.presenter
 
 import android.content.Context
 import android.util.Log
+import examen.com.banregioapp.R
 
 import examen.com.banregioapp.base.presenter.Presenter
 import examen.com.banregioapp.login.model.LoginRequest
@@ -27,10 +28,10 @@ class LoginPresenter(val context: Context) : Presenter<LoginView>() {
 
     fun getLogin(loginRequest: LoginRequest) {
         var flag = true
-        if (loginRequest._user!=CORRECT_USER) {
+        if (loginRequest._user != CORRECT_USER) {
             flag = false
             getView().showToast(MSG_USER)
-        } else if (loginRequest._password!=CORRECT_PASSWORD) {
+        } else if (loginRequest._password != CORRECT_PASSWORD) {
             flag = false
             getView().showToast(MSG_PASSWORD)
         }
@@ -58,11 +59,12 @@ class LoginPresenter(val context: Context) : Presenter<LoginView>() {
                                 override fun onError(e: Throwable) {
                                     Log.d(TAG, "onError()")
                                     getView().hideLoadingView()
+                                    getView().showToast(context.getString(R.string.label_error))
                                 }
                             }
                     )
         } else {
-            Log.d(TAG, "Error in the Network")
+            getView().showToast(context.getString(R.string.label_error_network))
         }
     }
 }

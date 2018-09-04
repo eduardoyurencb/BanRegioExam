@@ -8,6 +8,8 @@
     <string name="label_permission_cancel_gpg">Permisos de ubicación cancelados. Se usará una locación temporal</string>
     <string name="label_gps_success">Ubicación exitosa</string>
     <string name="label_gps_error">Error al obtener tu ubicación</string>
+    <string name="label_error_network">Error en la conexión</string>
+    <string name="label_error">Algo salió mal</string>
 
     <string name="icon_address">&#xf2bb;</string>
     <string name="icon_clock">&#xf017;</string>

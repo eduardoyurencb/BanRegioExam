@@ -2,6 +2,7 @@ package examen.com.banregioapp.main.presenter
 
 import android.content.Context
 import android.util.Log
+import examen.com.banregioapp.R
 import examen.com.banregioapp.base.presenter.Presenter
 import examen.com.banregioapp.main.view.MainView
 import examen.com.banregioapp.utils.Network
@@ -41,12 +42,13 @@ class MainPresenter(val context: Context) : Presenter<MainView>() {
                                 override fun onError(e: Throwable) {
                                     Log.d(MainPresenter.TAG, "onError()")
                                     getView().hideLoadingView()
+                                    getView().showToast(context.getString(R.string.label_error))
                                 }
 
                             }
                     )
         } else {
-            Log.d(MainPresenter.TAG, "Error in the Network")
+            getView().showToast(context.getString(R.string.label_error_network))
         }
     }
 }
