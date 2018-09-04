@@ -35,8 +35,6 @@ class LoginPresenter(val context: Context) : Presenter<LoginView>() {
             getView().showToast(MSG_PASSWORD)
         }
 
-        flag = true
-
         if (Network.isNetworkConnected(context) && flag) {
             getView().showLoadingView()
             val service = RestClient.getClient(Constants.HOST)
