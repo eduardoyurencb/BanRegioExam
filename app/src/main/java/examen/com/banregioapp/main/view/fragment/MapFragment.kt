@@ -119,7 +119,7 @@ class MapFragment :
 
     override fun onMarkerClick(p0: Marker?): Boolean {
         Log.d(TAG, "onMarkerClick()")
-        var index = p0?.tag as Int
+        val index = p0?.tag as Int
         arrayListBranches?.let {
             if (index < it.size) {
                 mapFragmentIFace?.onCLickMarker(it[index])
